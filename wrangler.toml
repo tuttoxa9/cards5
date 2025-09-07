@@ -1,0 +1,23 @@
+name = "luminance-gallery"
+compatibility_date = "2024-01-01"
+
+[env.production]
+route = "luminance-gallery.pages.dev"
+
+[env.production.vars]
+NODE_ENV = "production"
+
+# Настройки для Pages
+[build]
+command = "npm run build"
+publish = "out"
+
+# Функции для API endpoints (если понадобятся)
+[[env.production.d1_databases]]
+binding = "DB"
+database_name = "luminance-gallery-db"
+database_id = "your-database-id-here"
+
+[[env.production.r2_buckets]]
+binding = "IMAGES"
+bucket_name = "luminance-gallery-images"

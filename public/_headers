@@ -1,0 +1,23 @@
+# Заголовки для всех файлов
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin-when-cross-origin
+
+# Кэширование для статических ресурсов
+/_next/static/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Кэширование для изображений
+/images/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Оптимизация для шрифтов
+/*.woff2
+  Cache-Control: public, max-age=31536000, immutable
+  Content-Type: font/woff2
+
+/*.woff
+  Cache-Control: public, max-age=31536000, immutable
+  Content-Type: font/woff

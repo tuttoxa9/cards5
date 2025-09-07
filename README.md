@@ -1,36 +1,92 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Luminance Gallery
 
-## Getting Started
+Современный сайт-витрина для коллекционных карточек с анимированным интерфейсом и голографическими эффектами.
 
-First, run the development server:
+## Особенности
+
+- 🎨 Анимированная Hero-секция с трансформацией при скролле
+- 🃏 Интерактивная галерея карточек с голографическими эффектами
+- 🛒 Система покупки паков (лутбоксы)
+- 📱 Полностью адаптивный дизайн
+- ⚡ Оптимизирован для высокой производительности
+- 🔒 Настроен для безопасного деплоя
+
+## Технологический стек
+
+- **Framework**: Next.js 15 с TypeScript
+- **Стилизация**: Tailwind CSS + shadcn/ui
+- **Анимации**: CSS Transforms с аппаратным ускорением
+- **Деплой**: Cloudflare Pages (готов к деплою)
+
+## Разработка
+
+Установка зависимостей и запуск dev-сервера:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+bun install
+bun run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Откройте [http://localhost:3000](http://localhost:3000) в браузере.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Сборка и деплой
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Локальная сборка
+```bash
+bun run build
+```
 
-## Learn More
+### Деплой на Cloudflare Pages
 
-To learn more about Next.js, take a look at the following resources:
+Проект полностью настроен для Cloudflare Pages:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. **Подключите репозиторий в Cloudflare Pages**
+2. **Настройки сборки:**
+   - Build command: `npm run build`
+   - Build output directory: `out`
+   - Node.js version: `18` или выше
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+3. **Переменные окружения:**
+   - `NODE_ENV=production`
 
-## Deploy on Vercel
+### Автоматические настройки
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- ✅ Статический экспорт включен (`output: 'export'`)
+- ✅ SPA маршрутизация настроена (`_redirects`)
+- ✅ HTTP заголовки для безопасности (`_headers`)
+- ✅ Оптимизация изображений для статического хостинга
+- ✅ Кэширование статических ресурсов
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Структура проекта
+
+```
+src/
+├── app/
+│   ├── globals.css     # Глобальные стили и анимации
+│   ├── layout.tsx      # Общий layout
+│   └── page.tsx        # Главная страница
+├── components/
+│   ├── HeroSection.tsx     # Анимированная Hero-секция
+│   ├── CallToAction.tsx    # Блок покупки паков
+│   ├── Gallery.tsx         # Галерея карточек
+│   ├── CardDetail.tsx      # Детальный просмотр карточки
+│   └── ui/                 # UI компоненты (shadcn)
+└── lib/
+    └── utils.ts            # Утилиты
+```
+
+## Будущие возможности
+
+- 🗄️ Интеграция с Cloudflare D1 для базы данных
+- 📁 Cloudflare R2 для хранения изображений
+- 🔐 Административная панель
+- 💳 Интеграция платежной системы
+- 🎯 Система раритетов и шансов
+- 📊 Аналитика и статистика
+
+## Дизайн-система
+
+- **Цвета**: Светлая тема с акцентом на #4F46E5
+- **Шрифт**: Inter для всего текста
+- **Стиль**: Минималистичный, структурированный, современный
+- **Анимации**: Плавные переходы с аппаратным ускорением

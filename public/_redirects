@@ -1,0 +1,9 @@
+# SPA fallback для всех маршрутов
+/* /index.html 200
+
+# Кэширование статических ресурсов
+/static/* /static/:splat 200
+/_next/static/* /_next/static/:splat 200
+
+# API маршруты (если будут добавлены)
+/api/* /api/:splat 200
